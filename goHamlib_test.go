@@ -3,7 +3,7 @@ package goHamlib_test
 import (
 	"testing"
 
-	"github.com/xylo04/goHamlib"
+	"github.com/gustou/goHamlib"
 )
 
 // Test consistency of Vfo Value and Name maps

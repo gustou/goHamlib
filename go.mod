@@ -1,3 +1,3 @@
-module github.com/xylo04/goHamlib
+module github.com/gustou/goHamlib
 
 go 1.14
