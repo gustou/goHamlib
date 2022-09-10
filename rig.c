@@ -3,6 +3,9 @@
 // #include <unistd.h>
 #include <stdlib.h>
 #include <hamlib/rig.h>
+#ifndef HAMLIB_FILPATHLEN
+#define HAMLIB_FILPATHLEN FILEPATHLEN
+#endif
 
 extern int go_rig_list_callback(void*,void*);
 
@@ -24,7 +27,7 @@ int set_port(RIG *myrig,int rig_port_type, char* portname, int baudrate, int dat
 	myrig->state.rigport.parm.serial.stop_bits = stopbits;
 	myrig->state.rigport.parm.serial.parity = parity;
 	myrig->state.rigport.parm.serial.handshake = handshake;
-	strncpy(myrig->state.rigport.pathname, portname, FILPATHLEN - 1);
+	strncpy(myrig->state.rigport.pathname, portname, HAMLIB_FILPATHLEN - 1);
 	// printf("path: %s\n", portname);
 	// printf("path: %s\n", myrig->state.rigport.pathname);
 	return 0;
